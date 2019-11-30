@@ -1,0 +1,36 @@
+ data1:any;
+  constructor(private ar1:ActivatedRoute,private s1:ToyService) { }       
+
+  ngOnInit() {
+    console.log(this.ar1.snapshot.params.id);
+    // this.ar.params.subscribe((res) => {
+    //   this.data = res;
+    var m1=this.ar1.snapshot.params.id;
+    this.getMensware(m1);
+    }
+    getMensware(m1){
+      this.s1.getMobile(m1).subscribe((res)=>{
+        console.log(res);
+        this.data1=res;
+      })
+    }
+data: any;
+
+  constructor(private ar: ActivatedRoute,private s:ToyService) { }
+
+  ngOnInit() {
+    console.log(this.ar.snapshot.params.id);
+    // this.ar.params.subscribe((res) => {
+    //   this.data = res;
+    var m=this.ar.snapshot.params.id;
+    this.getM(m);
+    }
+    getM(m){
+      this.s.getMobile(m).subscribe((res)=>{
+        console.log(res);
+        this.data=res;
+      })
+    }
+
+
+ribbon ribbon-top-right bg-info
